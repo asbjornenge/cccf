@@ -42,7 +42,7 @@ The env, **["FOO=BAR"]** in the example, is a list of environment variables. An 
 
 ## Volumes
 
-The volumes, **["/tmp:/tmp"]** in the example, is a list of volumes to mount inside the container. There are 3 different ways to specify a volume:
+The volumes, **["/tmp:/tmp"]** in the example, is a list of volumes to mount inside the container. There are two different ways to specify a volume:
 
     "/host/path:/container/path"  // Mounts a specified path on the host to the specified path in the container
     "/host/path"                  // Mounts a specified path on the host to the same path in the container
