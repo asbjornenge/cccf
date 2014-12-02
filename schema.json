@@ -1,0 +1,24 @@
+{
+	"title" : "Common Container Configuration Format",
+	"type"  : "object",
+	"properties" : {
+		"id" : {
+			"type"    : "string",
+			"pattern" : "^/?[a-zA-Z0-9_-]+$"
+		},
+		"image" : {
+			"type" : "string"
+		},
+		"cmd" : {
+			"type" : "string"
+		},
+		"ports" : {
+			"type"  : "array",
+			"items" : {
+				"type"    : "string",
+				"pattern" : "^\\d+:\\d+$"
+			}
+		}
+	},
+	"required" : ["id", "image"]
+}

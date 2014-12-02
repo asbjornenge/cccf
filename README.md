@@ -6,12 +6,13 @@ It describes containers, their properties and the relationship between them. Thi
 
 The format is extensible to allow other modules expand it's capabilities and semantics.
 
+**DISCLAIMER** WORK IN PROGRESS
+
 # Example
 
     {
         "app" : {                            // Container Id 
             "image"   : "megacorp/webapp",   // Image path
-            "name"    : "app1"               // Name of the container (optional)
             "cmd"     : "python server.py",  // Command to run        (optional)
             "ports"   : ["80:80"],           // List of port mappings (optional)
             "env"     : ["FOO=BAR"],         // Environment variables (optional)

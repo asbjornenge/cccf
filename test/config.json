@@ -1,0 +1,10 @@
+{
+    "id"      : "app",
+    "image"   : "megacorp/webapp",
+    "cmd"     : "python server.py",
+    "ports"   : ["80:80"],
+    "env"     : ["FOO=BAR"],
+    "links"   : ["$redis"],
+    "volumes" : ["/tmp:/tmp","$db"],
+    "expose"  : ["8000","3000"]
+}

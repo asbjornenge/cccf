@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/asbjornenge/common-container-configuration-format/issues"
   },
-  "homepage": "https://github.com/asbjornenge/common-container-configuration-format"
+  "homepage": "https://github.com/asbjornenge/common-container-configuration-format",
+  "dependencies": {
+    "jjv": "^1.0.2"
+  }
 }
