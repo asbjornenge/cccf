@@ -8,7 +8,7 @@ The format is extensible so other modules can expand it's capabilities and seman
 
 **DISCLAIMER** WORK IN PROGRESS
 
-# Example
+## Example
 
     {
         "id"      : "app",               // Container Id
@@ -20,38 +20,51 @@ The format is extensible so other modules can expand it's capabilities and seman
         "expose"  : ["8000","3000"]      // Exposed ports         (optional)
     }
 
-## Id
+### Id
 
 The id, **app** in the example, is the container identifier. It can be any arbitrary string. No spaces.
 
-## Image
+### Image
 
 The image, **megacorp/webapp** in the example, is URI to the container image. It can be any valid URI, relative or full.
 
-## Cmd
+### Cmd
 
 The cmd, **python server.py** in the example, is the command to execute when running the container. It can be an arbitrary string.
 
-## Ports
+### Ports
 
 The ports, **["80:80"]** in the example, is a list of port mappings. A port mapping is defined using a string with two ports separated by a colon: **"host-port:container-port"** where ***host-port*** references a port on the host running the container, and the ***container-port*** references a port inside the running container.
 
-## Env
+### Env
 
 The env, **["FOO=BAR"]** in the example, is a list of environment variables. An evironment variable is defined using a string with a key and a value separated by a equals sign: **"key=value"**.
 
-## Volumes
+### Volumes
 
 The volumes, **["/tmp:/tmp"]** in the example, is a list of volumes to mount inside the container. There are two different ways to specify a volume:
 
     "/host/path:/container/path"  // Mounts a specified path on the host to the specified path in the container
     "/host/path"                  // Mounts a specified path on the host to the same path in the container
 
-## Expose
+### Expose
 
 Expose, **["8000","3000"]** in the example, is a list of ports the container exposes.
 
-# HELP WANTED
+## Install the module
+
+    npm install common-container-configuration-format
+
+## Use the module
+
+    var cccf       = require('common-container-configuration-format')
+    var container  = require('./container.json')
+    var containers = require('./containers.json')
+
+    var errors1 = cccf.validate(container)
+    var errorsX = cccf.validate(containers)
+
+## HALP
 
 Is this a good idea at all? What is missing? Typos? Messed up semantics? Please file issues!
 
