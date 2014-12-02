@@ -64,4 +64,5 @@ Is this a good idea at all? What is missing? Typos? Messed up semantics? Please 
 Stuff I would like to see:
 
 * A cluster module that adds grouping and scale
+* A resource module that adds required resources (CPU, MEM, DISK, etc.)
 * A [fig](http://www.fig.sh/yml.html) (yml) parser module.

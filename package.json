@@ -1,0 +1,25 @@
+{
+  "name": "common-container-configuration-format",
+  "version": "1.0.0",
+  "description": "Common Container Configuration Format",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -w -R nyan --check-leaks"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/asbjornenge/common-container-configuration-format.git"
+  },
+  "keywords": [
+    "container",
+    "json",
+    "format",
+    "docker"
+  ],
+  "author": "Asbjorn Enge <asbjorn@hanafjedle.net>",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/asbjornenge/common-container-configuration-format/issues"
+  },
+  "homepage": "https://github.com/asbjornenge/common-container-configuration-format"
+}
