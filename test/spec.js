@@ -1,6 +1,7 @@
-var assert = require('assert')
-var cccf   = require('../index')
-var config = require('./config.json')
+var assert   = require('assert')
+var cccf     = require('../index')
+var config   = require('./config.json')
+var multiple = require('./multiple.json')
 
 var clone  = function(config) { return JSON.parse(JSON.stringify(config)) }
 
@@ -12,6 +13,11 @@ describe('Common Container Configuration Format', function() {
 
 	it('can validate a valid json string', function() {
 		assert(cccf.validate(JSON.stringify(config)) == null)
+	})
+
+	it('can validate multiple', function() {
+		assert(cccf.validateMultiple(multiple) == null)
+		assert(cccf.validateMultiple(JSON.stringify(multiple)) == null)
 	})
 
 	it('will not validate ids with invalid chars', function() {
@@ -93,6 +99,13 @@ describe('Common Container Configuration Format', function() {
 		var _config    = clone(config)
 		_config.expose = ["FOO"]
 		var res        = cccf.validate(_config)
+		assert(res != null)
+	})
+
+	it('uses the same schema for mulitple', function() {
+		var _multiple       = clone(multiple)
+		_multiple[0].expose = ["FOO"]
+		var res             = cccf.validateMultiple(_multiple)
 		assert(res != null)
 	})
 
