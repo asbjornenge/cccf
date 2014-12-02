@@ -11,15 +11,14 @@ The format is extensible to allow other modules expand it's capabilities and sem
 # Example
 
     {
-        "app" : {                            // Container Id 
-            "image"   : "megacorp/webapp",   // Image path
-            "cmd"     : "python server.py",  // Command to run        (optional)
-            "ports"   : ["80:80"],           // List of port mappings (optional)
-            "env"     : ["FOO=BAR"],         // Environment variables (optional)
-            "links"   : ["$redis"],          // Container links       (optional)
-            "volumes" : ["/tmp:/tmp","$db"], // Container volumes     (optional)
-            "expose"  : ["8000","3000"]      // Exposed ports         (optional)
-        }
+        "id"      : "app",               // Container Id
+        "image"   : "megacorp/webapp",   // Image path
+        "cmd"     : "python server.py",  // Command to run        (optional)
+        "ports"   : ["80:80"],           // List of port mappings (optional)
+        "env"     : ["FOO=BAR"],         // Environment variables (optional)
+        "links"   : ["$redis"],          // Container links       (optional)
+        "volumes" : ["/tmp:/tmp","$db"], // Container volumes     (optional)
+        "expose"  : ["8000","3000"]      // Exposed ports         (optional)
     }
 
 ## Id
