@@ -2,9 +2,9 @@
 
 The Common Container Configuration Format (cccf) is an attempt at creating a standard container configuration format, in JSON. 
 
-It describes containers, their properties and the relationship between them. This repository will include a JSON schema validator of the cccf.
+It describes containers, their properties and the relationship between them. This repository will include a JSON schema validator for the cccf.
 
-The format is extensible to allow other modules expand it's capabilities and semantics.
+The format is extensible so other modules can expand it's capabilities and semantics.
 
 **DISCLAIMER** WORK IN PROGRESS
 
