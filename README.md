@@ -16,8 +16,7 @@ The format is extensible so other modules can expand it's capabilities and seman
         "cmd"     : "python server.py",  // Command to run        (optional)
         "ports"   : ["80:80"],           // List of port mappings (optional)
         "env"     : ["FOO=BAR"],         // Environment variables (optional)
-        "links"   : ["$redis"],          // Container links       (optional)
-        "volumes" : ["/tmp:/tmp","$db"], // Container volumes     (optional)
+        "volumes" : ["/tmp:/tmp"],       // Container volumes     (optional)
         "expose"  : ["8000","3000"]      // Exposed ports         (optional)
     }
 
@@ -41,17 +40,12 @@ The ports, **["80:80"]** in the example, is a list of port mappings. A port mapp
 
 The env, **["FOO=BAR"]** in the example, is a list of environment variables. An evironment variable is defined using a string with a key and a value separated by a equals sign: **"key=value"**.
 
-## Links
-
-The links, **["$redis"]** in the example, is a list of linked containers. A containers link is defined using a string, a **$** sign and the **id** of the container: **"$id"**.
-
 ## Volumes
 
-The volumes, **["/tmp:/tmp","$db"]** in the example, is a list of volumes to mount inside the container. There are 3 different ways to specify a volume:
+The volumes, **["/tmp:/tmp"]** in the example, is a list of volumes to mount inside the container. There are 3 different ways to specify a volume:
 
     "/host/path:/container/path"  // Mounts a specified path on the host to the specified path in the container
     "/host/path"                  // Mounts a specified path on the host to the same path in the container
-    "$container"                  // Mounts the same volumes as another container
 
 ## Expose
 
@@ -63,6 +57,7 @@ Is this a good idea at all? What is missing? Typos? Messed up semantics? Please 
 
 Stuff I would like to see:
 
+* Docker cccf extension (adding links, volumes_from, etc.)
 * A cluster module that adds grouping and scale
 * A resource module that adds required resources (CPU, MEM, DISK, etc.)
 * A [fig](http://www.fig.sh/yml.html) (yml) parser module.
