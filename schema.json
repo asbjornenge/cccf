@@ -18,6 +18,27 @@
 				"type"    : "string",
 				"pattern" : "^\\d+:\\d+$"
 			}
+		},
+		"env" : {
+			"type"  : "array",
+			"items" : {
+				"type"    : "string",
+				"pattern" : "^\\w+=\\w+$"
+			}
+		},
+		"volumes" : {
+			"type"  : "array",
+			"items" : {
+				"type"    : "string",
+				"pattern" : "[^\\0]+:(/[^/]+)+$"
+			}
+		},
+		"expose" : {
+			"type"  : "array",
+			"items" : {
+				"type"    : "string",
+				"pattern" : "^\\d+$"
+			}
 		}
 	},
 	"required" : ["id", "image"]

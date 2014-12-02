@@ -39,7 +39,61 @@ describe('Common Container Configuration Format', function() {
 	})
 
 	it('will not validate badly formatted portmappings', function() {
-		
+		var _config   = clone(config)
+		_config.ports = ["80:meh"]
+		var res       = cccf.validate(_config)
+		assert(res != null)
+	})
+
+	it('will not validate env as anything but an array', function() {
+		var _config   = clone(config)
+		_config.env   = 2
+		var res       = cccf.validate(_config)
+		assert(res != null)
+		assert(res.validation.env.type == 'array')		
+	})
+
+	it('will not validate badly formatted envs', function() {
+		var _config   = clone(config)
+		_config.env   = ["FOO:BAR"]
+		var res       = cccf.validate(_config)
+		assert(res != null)
+	})
+
+	it('will not validate volumes as anything but an array', function() {
+		var _config     = clone(config)
+		_config.volumes = 2
+		var res         = cccf.validate(_config)
+		assert(res != null)
+		assert(res.validation.volumes.type == 'array')		
+	})
+
+	it('will not validate badly formatted volumes', function() {
+		var _config     = clone(config)
+		_config.volumes = ["chili"]
+		var res         = cccf.validate(_config)
+		assert(res != null)
+		_config.volumes = ["tmp:tmp"]
+		var res         = cccf.validate(_config)
+		assert(res != null)
+		_config.volumes = ["./tmp:/tmp"]
+		var res         = cccf.validate(_config)
+		assert(res == null)
+	})
+
+	it('will not validate expose as anything but an array', function() {
+		var _config     = clone(config)
+		_config.expose  = 2
+		var res         = cccf.validate(_config)
+		assert(res != null)
+		assert(res.validation.expose.type == 'array')		
+	})
+
+	it('will not validate badly formatted expose', function() {
+		var _config    = clone(config)
+		_config.expose = ["FOO"]
+		var res        = cccf.validate(_config)
+		assert(res != null)
 	})
 
 })

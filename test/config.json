@@ -5,6 +5,6 @@
     "ports"   : ["80:80"],
     "env"     : ["FOO=BAR"],
     "links"   : ["$redis"],
-    "volumes" : ["/tmp:/tmp","$db"],
+    "volumes" : ["/tmp:/tmp"],
     "expose"  : ["8000","3000"]
 }
