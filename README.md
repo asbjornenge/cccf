@@ -53,11 +53,11 @@ Expose, **["8000","3000"]** in the example, is a list of ports the container exp
 
 ## Install the module
 
-    npm install common-container-configuration-format
+    npm install cccf 
 
 ## Use the module
 
-    var cccf       = require('common-container-configuration-format')
+    var cccf       = require('cccf')
     var container  = require('./container.json')
     var containers = require('./containers.json')
 
