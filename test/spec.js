@@ -1,7 +1,7 @@
 var assert   = require('assert')
 var cccf     = require('../index')
-var config   = require('./config.json')
-var multiple = require('./multiple.json')
+var config   = require('../example.json')
+var multiple = require('../example-multiple.json')
 
 var clone  = function(config) { return JSON.parse(JSON.stringify(config)) }
 
