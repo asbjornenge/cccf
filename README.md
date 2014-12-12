@@ -62,7 +62,7 @@ Expose, **["8000","3000"]** in the example, is a list of ports the container exp
     var containers = require('./containers.json')
 
     var errors1 = cccf.validate(container)
-    var errorsX = cccf.validateMultiple(containers)
+    var errorsX = cccf.validate(containers)
 
 ## HALP
 
@@ -74,3 +74,19 @@ Stuff I would like to see:
 * A cluster module that adds grouping and scale
 * A resource module that adds required resources (CPU, MEM, DISK, etc.)
 * A [fig](http://www.fig.sh/yml.html) (yml) parser module.
+
+## Changelog
+
+### 2.0.0
+
+* Removed the validateMultiple API and rather do a quick *instanceof Array* verification for validate
+
+### 1.0.1
+
+**NB!** Moved from *common-container-configuration-format* to *cccf*.
+
+* Updates for package move
+
+### 1.0.0
+
+* Initial release
