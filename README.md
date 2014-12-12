@@ -77,6 +77,10 @@ Stuff I would like to see:
 
 ## Changelog
 
+### 2.1.0
+
+* Added cccf/example.json and cccf/example-multiple.json for easier example require from other modules
+
 ### 2.0.0
 
 * Removed the validateMultiple API and rather do a quick *instanceof Array* verification for validate
