@@ -14,10 +14,9 @@ env.addSchema('cccf-multiple', {
 
 module.exports = {
 	schema : schema,
-	validate : function(config) { 
-		return env.validate('cccf', typeof config == 'object' ? config : JSON.parse(config)) 
-	},
-	validateMultiple : function(config) {
-		return env.validate('cccf-multiple', typeof config == 'object' ? config : JSON.parse(config))
+	validate : function(config) {
+		if (!(typeof config == 'object')) config = JSON.parse(config)
+		if (config instanceof Array) return env.validate('cccf-multiple', config)
+		else return env.validate('cccf', config)
 	}
 }
