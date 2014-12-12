@@ -1,5 +1,5 @@
 {
-  "name": "cccf"
+  "name": "cccf",
   "version": "1.0.0",
   "description": "Common Container Configuration Format",
   "main": "index.js",
