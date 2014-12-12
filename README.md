@@ -62,7 +62,7 @@ Expose, **["8000","3000"]** in the example, is a list of ports the container exp
     var containers = require('./containers.json')
 
     var errors1 = cccf.validate(container)
-    var errorsX = cccf.validate(containers)
+    var errorsX = cccf.validateMultiple(containers)
 
 ## HALP
 
