@@ -14,7 +14,8 @@
     "container",
     "json",
     "format",
-    "docker"
+    "docker",
+    "cccf"
   ],
   "author": "Asbjorn Enge <asbjorn@hanafjedle.net>",
   "license": "BSD",
