@@ -61,8 +61,12 @@ Expose, **["8000","3000"]** in the example, is a list of ports the container exp
     var container  = require('./container.json')
     var containers = require('./containers.json')
 
-    var errors1 = cccf.validate(container)
-    var errorsX = cccf.validate(containers)
+    try {
+        cccf.validate(container)
+        cccf.validate(containers)
+    } catch(e) {
+        console.log(e.trace)
+    }
 
 ## HALP
 
@@ -79,7 +83,7 @@ Stuff I would like to see:
 
 ### 3.0.0
 
-* Throwing exceptions instead of returning err. If no err **validate** returns the passed config (in input format).
+* Throwing exceptions instead of returning err. Makes for better composition. If no err, *validate* returns the passed config (in input format).
 
 ### 2.1.0
 
