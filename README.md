@@ -1,5 +1,7 @@
 # Common Container Configuration Format
 
+[![NPM](https://nodei.co/npm/cccf.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/cccf/)
+
 The Common Container Configuration Format (cccf) is an attempt at creating a standard container configuration format, in JSON. 
 
 It describes containers, their properties and the relationship between them. This repository will include a JSON schema validator for the cccf.
