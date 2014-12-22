@@ -79,6 +79,14 @@ Stuff I would like to see:
 * A resource module that adds required resources (CPU, MEM, DISK, etc.)
 * A [fig](http://www.fig.sh/yml.html) (yml) parser module.
 
+## Ecosystem
+
+Some modules using cccf
+
+* [cccf-scale](https://github.com/asbjornenge/cccf-scale) - Scale up a cccf config
+* [cccf-diff](https://github.com/asbjornenge/cccf-diff) - Diff two cccf configs
+* [cccf-docker-instructions](https://github.com/asbjornenge/cccf-docker-instructions) - cccf and cccf-docker -> docker cli instructions
+
 ## Changelog
 
 ### 3.0.0
