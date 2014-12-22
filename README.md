@@ -65,7 +65,7 @@ Expose, **["8000","3000"]** in the example, is a list of ports the container exp
         cccf.validate(container)
         cccf.validate(containers)
     } catch(e) {
-        console.log(e.trace)
+        console.log(e instanceof cccf.exception, e.trace)
     }
 
 ## HALP
