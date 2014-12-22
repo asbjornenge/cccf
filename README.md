@@ -61,8 +61,12 @@ Expose, **["8000","3000"]** in the example, is a list of ports the container exp
     var container  = require('./container.json')
     var containers = require('./containers.json')
 
-    var errors1 = cccf.validate(container)
-    var errorsX = cccf.validate(containers)
+    try {
+        cccf.validate(container)
+        cccf.validate(containers)
+    } catch(e) {
+        console.log(e instanceof cccf.exception, e.trace)
+    }
 
 ## HALP
 
@@ -75,7 +79,19 @@ Stuff I would like to see:
 * A resource module that adds required resources (CPU, MEM, DISK, etc.)
 * A [fig](http://www.fig.sh/yml.html) (yml) parser module.
 
+## Ecosystem
+
+Some modules using cccf
+
+* [cccf-scale](https://github.com/asbjornenge/cccf-scale) - Scale up a cccf config
+* [cccf-diff](https://github.com/asbjornenge/cccf-diff) - Diff two cccf configs
+* [cccf-docker-instructions](https://github.com/asbjornenge/cccf-docker-instructions) - cccf and cccf-docker -> docker cli instructions
+
 ## Changelog
+
+### 3.0.0
+
+* Throwing exceptions instead of returning err. Makes for better composition. If no err, *validate* returns the passed config (in input format).
 
 ### 2.1.0
 
