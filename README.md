@@ -77,6 +77,10 @@ Stuff I would like to see:
 
 ## Changelog
 
+### 3.0.0
+
+* Throwing exceptions instead of returning err. If no err **validate** returns the passed config (in input format).
+
 ### 2.1.0
 
 * Added cccf/example.json and cccf/example-multiple.json for easier example require from other modules
