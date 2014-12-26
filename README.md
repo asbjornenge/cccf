@@ -91,6 +91,10 @@ Some modules using cccf
 
 ## Changelog
 
+### 3.1.0
+
+* Loosened the regex for env. I'm gonna need some help with the regexes :-P Feel free to HALP!
+
 ### 3.0.0
 
 * Throwing exceptions instead of returning err. Makes for better composition. If no err, *validate* returns the passed config (in input format).

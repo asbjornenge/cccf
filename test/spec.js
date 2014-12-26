@@ -1,4 +1,5 @@
 var assert   = require('assert')
+
 var cccf     = require('../index')
 var config   = require('../example.json')
 var multiple = require('../example-multiple.json')
@@ -66,6 +67,13 @@ describe('Common Container Configuration Format', function() {
 		_config.env   = ["FOO:BAR"]
 		try { cccf.validate(_config) } catch(e) { assert(e instanceof cccf.exception) }
 	})
+
+    it('will validate numbers and dots in env', function() {
+        var _config = clone(config)
+        _config.env = ["FOO=192.168.1.2"]
+        try { cccf.validate(_config) } catch(e) { assert(false) }
+        assert(true)
+    })
 
 	it('will not validate volumes as anything but an array', function() {
 		var _config     = clone(config)
