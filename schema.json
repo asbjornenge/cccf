@@ -16,7 +16,7 @@
 			"type"  : "array",
 			"items" : {
 				"type"    : "string",
-				"pattern" : "^\\d+:\\d+$"
+				"pattern" : "^\\d+:\\d+(\\/(tcp|udp))?$"
 			}
 		},
 		"env" : {

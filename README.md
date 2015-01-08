@@ -13,13 +13,12 @@ The format is extensible so other modules can expand it's capabilities and seman
 ## Example
 
     {
-        "id"      : "app",               // Container Id
-        "image"   : "megacorp/webapp",   // Image path
-        "cmd"     : "python server.py",  // Command to run        (optional)
-        "ports"   : ["80:80"],           // List of port mappings (optional)
-        "env"     : ["FOO=BAR"],         // Environment variables (optional)
-        "volumes" : ["/tmp:/tmp"],       // Container volumes     (optional)
-        "expose"  : ["8000","3000"]      // Exposed ports         (optional)
+        "id"      : "app",                 // Container Id
+        "image"   : "megacorp/webapp",     // Image path
+        "cmd"     : "python server.py",    // Command to run        (optional)
+        "ports"   : ["80:80","53:53/udp"], // List of port mappings (optional)
+        "env"     : ["FOO=BAR"],           // Environment variables (optional)
+        "volumes" : ["/tmp:/tmp"],         // Container volumes     (optional)
     }
 
 ### Id
@@ -36,7 +35,7 @@ The cmd, **python server.py** in the example, is the command to execute when run
 
 ### Ports
 
-The ports, **["80:80"]** in the example, is a list of port mappings. A port mapping is defined using a string with two ports separated by a colon: **"host-port:container-port"** where ***host-port*** references a port on the host running the container, and the ***container-port*** references a port inside the running container.
+The ports, **["80:80"]** in the example, is a list of port mappings. A port mapping is defined using a string with two ports separated by a colon: **"host-port:container-port"** where ***host-port*** references a port on the host running the container, and the ***container-port*** references a port inside the running container. Since version 3.2.0 cccf also support specifying the protocol; **["53:53/udp"]**. The two supported protocols are *tcp* and *udp*. 
 
 ### Env
 
@@ -48,10 +47,6 @@ The volumes, **["/tmp:/tmp"]** in the example, is a list of volumes to mount ins
 
     "/host/path:/container/path"  // Mounts a specified path on the host to the specified path in the container
     "/host/path"                  // Mounts a specified path on the host to the same path in the container
-
-### Expose
-
-Expose, **["8000","3000"]** in the example, is a list of ports the container exposes.
 
 ## Install the module
 
@@ -90,6 +85,11 @@ Some modules using cccf
 * [cccf-docker-instructions](https://github.com/asbjornenge/cccf-docker-instructions) - cccf and cccf-docker -> docker cli instructions
 
 ## Changelog
+
+### 3.2.0
+
+* Support for port protocols tcp and udp
+* Removed docs for expose (planning to remove it in next major)
 
 ### 3.1.0
 
