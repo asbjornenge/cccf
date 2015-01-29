@@ -1,6 +1,6 @@
 {
   "name": "cccf",
-  "version": "3.2.0",
+  "version": "3.2.1",
   "description": "Common Container Configuration Format",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/asbjornenge/common-container-configuration-format.git"
+    "url": "https://github.com/asbjornenge/cccf.git"
   },
   "keywords": [
     "container",
@@ -20,9 +20,9 @@
   "author": "Asbjorn Enge <asbjorn@hanafjedle.net>",
   "license": "BSD",
   "bugs": {
-    "url": "https://github.com/asbjornenge/common-container-configuration-format/issues"
+    "url": "https://github.com/asbjornenge/cccf/issues"
   },
-  "homepage": "https://github.com/asbjornenge/common-container-configuration-format",
+  "homepage": "https://github.com/asbjornenge/cccf",
   "dependencies": {
     "jjv": "^1.0.2"
   }
