@@ -1,4 +1,6 @@
 var env = require('jjv')()
+var assign = require('object.assign')
+var utils = require('./utils')
 var schema = require('./schema.json')
 
 var CCCFException = function(message, trace) {
@@ -29,5 +31,13 @@ module.exports = {
 		if (err) throw new CCCFException('Invalid config', err)
 		return config
 	},
-	exception : CCCFException
+	exception : CCCFException,
+  random: function(num, opts) {
+    opts = opts || {}
+    return Array.apply(null, {length: num}).map(function(value, index){
+      var c = utils.randomExampleContainer()
+      assign(c, opts)
+      return c
+    })
+  }
 }

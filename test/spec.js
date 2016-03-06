@@ -122,4 +122,13 @@ describe('Common Container Configuration Format', function() {
 		try { cccf.validate(_multiple) } catch(e) { assert(e instanceof cccf.exception) }
 	})
 
+  it('can generate random test containers', function() {
+    var containers = cccf.random(5, { host: { hostname: 'yolo-1' } })
+    assert(containers instanceof Array)
+    assert(containers.length == 5)
+    containers.forEach(function(c) {
+      assert(c.host.hostname == 'yolo-1')
+    })
+  })
+
 })
