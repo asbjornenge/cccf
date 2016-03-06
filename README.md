@@ -65,16 +65,28 @@ The volumes, **["/tmp:/tmp"]** in the example, is a list of volumes to mount ins
         console.log(e instanceof cccf.exception, e.trace)
     }
 
-## HALP
+## API
 
-Is this a good idea at all? What is missing? Typos? Messed up semantics? Please file issues!
+#### `validate(containers)`
 
-Stuff I would like to see:
+The main use-case for this module is to validate container configs. See example above. 
 
-* Docker cccf extension (adding links, volumes_from, etc.)
-* A cluster module that adds grouping and scale
-* A resource module that adds required resources (CPU, MEM, DISK, etc.)
-* A [fig](http://www.fig.sh/yml.html) (yml) parser module.
+#### `random(num, opts)`
+
+Generate random container configs. Useful for testing etc.
+
+```js
+  var cccf = require('cccf')
+  var containers = cccf.random(5, { host: { hostname: 'yolo' }})
+```
+
+#### `schema`
+
+The cccf json schema.
+
+#### `exception`
+
+The cccf exception throws if bad config.
 
 ## Ecosystem
 
@@ -82,9 +94,14 @@ Some modules using cccf
 
 * [cccf-scale](https://github.com/asbjornenge/cccf-scale) - Scale up a cccf config
 * [cccf-diff](https://github.com/asbjornenge/cccf-diff) - Diff two cccf configs
+* [cccf-scheduler](https://github.com/asbjornenge/cccf-scheduler) - Schedule containers 
 * [cccf-docker-instructions](https://github.com/asbjornenge/cccf-docker-instructions) - cccf and cccf-docker -> docker cli instructions
 
 ## Changelog
+
+### 3.3.0
+
+* Added support for generating random containers
 
 ### 3.2.0
 
