@@ -52,32 +52,32 @@ The volumes, **["/tmp:/tmp"]** in the example, is a list of volumes to mount ins
 
     npm install cccf 
 
-## Use the module
-
-    var cccf       = require('cccf')
-    var container  = require('./container.json')
-    var containers = require('./containers.json')
-
-    try {
-        cccf.validate(container)
-        cccf.validate(containers)
-    } catch(e) {
-        console.log(e instanceof cccf.exception, e.trace)
-    }
-
 ## API
 
 #### `validate(containers)`
 
-The main use-case for this module is to validate container configs. See example above. 
+The main use-case for this module is to validate container configs. 
+
+```js
+var cccf       = require('cccf')
+var container  = require('./container.json')
+var containers = require('./containers.json')
+
+try {
+  cccf.validate(container)
+  cccf.validate(containers)
+} catch(e) {
+  console.log(e instanceof cccf.exception, e.trace)
+}
+```
 
 #### `random(num, opts)`
 
 Generate random container configs. Useful for testing etc.
 
 ```js
-  var cccf = require('cccf')
-  var containers = cccf.random(5, { host: { hostname: 'yolo' }})
+var cccf = require('cccf')
+var containers = cccf.random(5, { host: { hostname: 'yolo' }})
 ```
 
 #### `schema`
